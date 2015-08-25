@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-lg-offset-5">
+      <h1>Idea Box</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-2">
+      <h2>Create New Idea</h2>
+      <%= render 'shared/idea_form' %>
+    </div>
+
+    <div class="col-lg-5 col-lg-offset-1">
+      <h1>Idea List</h1>
+      <ul>
+        <% @ideas.each do |idea| %>
+            <li>
+              <%= idea.title %>
+              <%= idea.body %>
+              <%= idea.quality %>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<!--<div class="input-group">-->
+<!--<input id="search" type="search" name="search" type="text" class="form-control" placeholder="Search Ideas">-->
+<!--<span class="input-group-btn">-->
+<!--<button class="btn btn-default btn-search" type="button">Go!</button>-->
+<!--</span>-->
+<!--</div>-->
+<!--<div id="idea-results"></div>-->
