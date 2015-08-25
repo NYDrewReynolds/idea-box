@@ -10,14 +10,21 @@
       <%= render 'shared/idea_form' %>
     </div>
 
-    <div class="col-lg-5 col-lg-offset-1">
+    <div class="col-lg-4 col-lg-offset-1">
       <h1>Idea List</h1>
       <ul>
         <% @ideas.each do |idea| %>
             <li>
-              <%= idea.title %>
-              <%= idea.body %>
-              <%= idea.quality %>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title"><%= idea.title %>
+                  <span class="label label-primary "><%= idea.quality %></span>
+                    <span class='delete-song pull-right'><i class='fa fa-times fa-lg'></i></span></h3>
+                </div>
+                <div class="panel-body">
+                  <%= idea.body %>
+                </div>
+              </div>
             </li>
         <% end %>
       </ul>

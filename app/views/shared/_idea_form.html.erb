@@ -1,6 +1,6 @@
 <%= form_for(@idea, html: {multipart: true}) do |f| %>
     <%= f.text_field :title, placeholder: 'Title' %><br>
-    <%= f.text_field :body, placeholder: 'Body' %>
+    <%= f.text_field :body, placeholder: 'Body' %><br>
 
-    <%= f.submit "Create Idea!", class: 'btn btn-success' %>
+    <%= f.submit "Save", class: 'btn btn-success' %>
 <% end %>
