@@ -2,6 +2,7 @@
   <div class="panel-heading">
     <h3 class="panel-title"><%= idea.title %>
       <span class='remove-idea pull-right'><i class='fa fa-times fa-lg'></i></span>
+      <%= link_to "Edit", edit_idea_path(idea), class:'edit-link pull-right' %>
     </h3>
   </div>
   <div class="panel-body">

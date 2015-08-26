@@ -12,6 +12,19 @@ class IdeasController < ApplicationController
     render partial: "shared/idea", locals: {idea: idea}
   end
 
+  def edit
+    @idea = Idea.find(params[:id])
+  end
+
+  def update
+    @idea = Idea.find(params[:id])
+    if @idea.update(idea_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   def destroy
     @idea = Idea.find(params[:id])
     @idea.destroy

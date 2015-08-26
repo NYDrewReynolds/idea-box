@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-lg-offset-5">
+      <h1>Edit Idea</h1>
+
+      <%= form_for @idea do |f| %>
+          <%= f.text_field :title, placeholder: 'Title', id: 'idea-title' %><br>
+          <%= f.text_area :body, placeholder: 'Body', id: 'idea-body' %><br>
+
+          <%= f.submit "Save!", class: 'btn btn-success', id: 'create-idea' %>
+      <% end %>
+    </div>
+  </div>
+</div>
