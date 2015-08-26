@@ -6,13 +6,13 @@
   </div>
   <div class="row">
     <div class="col-lg-4 col-lg-offset-2">
-      <h2>Create New Idea</h2>
+      <h2>Create a New Idea</h2>
       <%= render 'shared/idea_form' %>
     </div>
 
     <div class="col-lg-4 col-lg-offset-1">
-      <h1>Idea List</h1>
-      <ul>
+      <h1 class="text-center">Ideas</h1>
+      <ul id="ideas">
         <% @ideas.each do |idea| %>
             <li>
               <div class="panel panel-default">
@@ -35,6 +35,11 @@
       </ul>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-7 col-md-offset-1" id="ideas"><%= render @ideas %></div>
+  </div>
+
 </div>
 
 

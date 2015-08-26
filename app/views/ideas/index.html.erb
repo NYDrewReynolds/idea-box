@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 col-lg-offset-5">
+      <h1>Idea Box</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-2">
+      <h2>Create a New Idea</h2>
+      <%= render 'shared/idea_form' %>
+    </div>
+
+    <div class="col-lg-4 col-lg-offset-1">
+      <h1 class="text-center">Ideas</h1>
+      <div id="ideas">
+        <% @ideas.each do |idea| %>
+        <%= render partial: "shared/idea", locals: {idea: idea} %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

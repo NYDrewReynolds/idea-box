@@ -1,24 +1,22 @@
 class IdeasController < ApplicationController
-  def new
-    @idea = Idea.new
-    @ideas = Idea.all
-  end
+  before_action :all_ideas, only: [:index, :create]
 
   def create
-    @idea = Idea.new(idea_params)
-    @idea.quality = "swill"
-    if @idea.save
-      flash[:notice] = "Idea successfully created!"
-      render new_idea_path
-    else
-      flash[:notice] = "Idea was not created."
-    end
+    idea = Idea.new(idea_params)
+    idea.quality = "swill"
+    idea.save
+    render partial: "shared/idea", locals: {idea: idea}
   end
 
   private
 
   def idea_params
     params.require(:idea).permit(:body, :title)
+  end
+
+  def all_ideas
+    @ideas = Idea.all
+    @idea = Idea.new
   end
 
 end
