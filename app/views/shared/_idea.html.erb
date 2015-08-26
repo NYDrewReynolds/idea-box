@@ -1,7 +1,6 @@
 <div class="panel panel-default" id="idea-<%= idea.id %>">
   <div class="panel-heading">
     <h3 class="panel-title"><%= idea.title %>
-      <span class="label label-primary"><%= idea.quality %></span>
       <span class='remove-idea pull-right'><i class='fa fa-times fa-lg'></i></span>
     </h3>
   </div>
@@ -9,7 +8,16 @@
     <%= idea.body %>
   </div>
   <div class="panel-footer">
-    <span class='upvote'><i class='fa fa-thumbs-up fa-lg'></i></span>
-    <span class='downvote pull-right'><i class='fa fa-thumbs-down fa-lg'></i></span>
+    <div class="row">
+      <div class="col-md-4">
+        <span class='upvote'><i class='fa fa-thumbs-up fa-lg'></i></span>
+      </div>
+      <div class="col-md-4 text-center">
+        <span class="label label-primary"><%= idea.quality %></span>
+      </div>
+      <div class="col-md-4">
+        <span class='downvote pull-right'><i class='fa fa-thumbs-down fa-lg'></i></span>
+      </div>
+    </div>
   </div>
 </div>
