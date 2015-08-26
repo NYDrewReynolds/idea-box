@@ -1,5 +1,5 @@
 class IdeasController < ApplicationController
-  before_action :all_ideas, only: [:index, :create]
+  before_action :set_ideas, only: [:index, :create]
 
   def create
     idea = Idea.new(idea_params)
@@ -14,7 +14,7 @@ class IdeasController < ApplicationController
     params.require(:idea).permit(:body, :title)
   end
 
-  def all_ideas
+  def set_ideas
     @ideas = Idea.all
     @idea = Idea.new
   end
