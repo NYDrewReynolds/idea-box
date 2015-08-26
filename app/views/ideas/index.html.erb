@@ -12,8 +12,11 @@
 
     <div class="col-lg-4 col-lg-offset-1">
       <h1 class="text-center">Ideas</h1>
+      <div class="search-box text-center">
+        <input type="text" placeholder="Search Ideas" id="filter_ideas" size="40">
+      </div>
       <div id="ideas">
-        <% @ideas.each do |idea| %>
+        <% @ideas.reverse.each do |idea| %>
         <%= render partial: "shared/idea", locals: {idea: idea} %>
         <% end %>
       </div>

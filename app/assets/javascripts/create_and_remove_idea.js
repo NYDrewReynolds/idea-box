@@ -14,7 +14,7 @@ function ideaData() {
 
 function postIdeaData() {
     $.post("/ideas", ideaData(), function(data){
-        $("#ideas").append(data);
+        $("#ideas").prepend(data);
         $ideaDiv = $(data);
         $('#ideas').last().click(deleteIdea);
     });

@@ -18,3 +18,7 @@
 .fa {
      cursor: pointer;
  }
+
+.search-box {
+  padding-bottom: 10px;
+}
