@@ -2,10 +2,6 @@ Rails.application.routes.draw do
   root 'ideas#index'
   resources :ideas
 
-  namespace :api do
-    namespace :v1 do
-      post   'add_idea',    to: 'idea#add_idea'
-      delete 'remove_idea', to: 'idea#remove_idea'
-    end
-  end
+  post '/upvote', to: 'ideas#upvote'
+  post '/downvote', to: 'ideas#downvote'
 end

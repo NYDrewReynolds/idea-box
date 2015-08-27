@@ -41,7 +41,47 @@ function deleteIdea() {
   });
 }
 
+function upvote() {
+    $('.upvote').on('click', function (event) {
+        event.preventDefault();
+        var ideaId = $(this).closest('.panel').data().id;
+        var ideaParameters = {
+            id: ideaId
+        };
+        var label = $(this).closest('.panel').find('#quality');
+
+        $.post('/upvote', ideaParameters).then(function (idea) {
+            if (label.text() === "swill") {
+                label.text("plausible");
+            } else if (label.text() === "plausible") {
+                label.text("genius");
+            }
+        })
+    })
+}
+
+function downvote() {
+    $('.downvote').on('click', function (event) {
+        event.preventDefault();
+        var ideaId = $(this).closest('.panel').data().id;
+        var ideaParameters = {
+            id: ideaId
+        };
+        var label = $(this).closest('.panel').find('#quality');
+
+        $.post('/downvote', ideaParameters).then(function (idea) {
+            if(label.text() === "genius") {
+                label.text("plausible");
+            } else if(label.text() === "plausible") {
+                label.text("swill");
+            }
+        })
+    })
+}
+
 $(document).ready(function () {
     $("#new_idea").submit(submitIdea);
     deleteIdea();
+    upvote();
+    downvote();
 });

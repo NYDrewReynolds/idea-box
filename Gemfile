@@ -12,10 +12,13 @@ gem 'twitter-bootstrap-rails'
 gem 'rails_12factor', group: :production
 gem 'font-awesome-rails'
 gem 'responders'
+gem 'selenium-webdriver'
 
 group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'database_cleaner'
+  gem 'capybara'
 end

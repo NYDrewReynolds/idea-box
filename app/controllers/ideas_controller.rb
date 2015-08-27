@@ -7,7 +7,6 @@ class IdeasController < ApplicationController
 
   def create
     idea = Idea.new(idea_params)
-    idea.quality = "swill"
     idea.save
     render partial: "shared/idea", locals: {idea: idea}
   end
@@ -33,10 +32,26 @@ class IdeasController < ApplicationController
     end
   end
 
+  def upvote
+    @idea = Idea.find(params[:id])
+    @idea.upvote
+    respond_to do |format|
+      format.js { render nothing: true }
+    end
+  end
+
+  def downvote
+    @idea = Idea.find(params[:id])
+    @idea.downvote
+    respond_to do |format|
+      format.js { render nothing: true }
+    end
+  end
+
   private
 
   def idea_params
-    params.require(:idea).permit(:body, :title)
+    params.require(:idea).permit(:body, :title, :quality)
   end
 
   def set_ideas
