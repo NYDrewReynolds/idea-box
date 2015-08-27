@@ -9,8 +9,8 @@ describe "Ideas", :type => :feature, :js => true do
     click_link_or_button "Save!"
   end
 
-  xit "posts an idea" do
-    click_link_or_button "X"
+  xit "removes an idea" do
+    first(find(".fa-times")).click
     expect(page).to_not have_content('Woo!')
   end
 end

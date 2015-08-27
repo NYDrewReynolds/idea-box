@@ -56,8 +56,8 @@ function upvote() {
             } else if (label.text() === "plausible") {
                 label.text("genius");
             }
-        })
-    })
+        });
+    });
 }
 
 function downvote() {
@@ -75,13 +75,13 @@ function downvote() {
             } else if(label.text() === "plausible") {
                 label.text("swill");
             }
-        })
-    })
+        });
+    });
 }
 
 $(document).ready(function () {
     $("#new_idea").submit(submitIdea);
-    deleteIdea();
+    $('#ideas').on('click', '.remove-idea', deleteIdea);
     upvote();
     downvote();
 });
